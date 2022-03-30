@@ -23,6 +23,7 @@ public:
 	void getAltaPaciente();//string Paciente_c.nombre);
 	void getMandarTesteo();
 	void BajaPaciente();
+	void Imprimir(); 
 };
 
 /*cCentroTesteo::cCentroTesteo()

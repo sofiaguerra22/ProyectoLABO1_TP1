@@ -21,3 +21,7 @@ void cCentroTesteo::getMandarTesteo()
 void cCentroTesteo::BajaPaciente()
 {
 }
+
+void cCentroTesteo::Imprimir()
+{
+}
