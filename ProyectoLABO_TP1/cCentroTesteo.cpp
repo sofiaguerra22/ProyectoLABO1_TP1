@@ -1,13 +1,11 @@
 #include "cCentroTesteo.h"
 using namespace std;
-cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, cPaciente* _Paciente_c, cLaboratorio* _Laboratorio)
+cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c)
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
 	completo_c = _completo_c;
-	cPaciente* _Paciente = NULL;
-	cLaboratorio* _Laboratiorio = NULL;
 }
 cCentroTesteo::~cCentroTesteo()
 {
@@ -19,6 +17,7 @@ void cCentroTesteo::AsociarLaboratorio(cLaboratorio laboratorio, cPaciente pacie
 		paciente.setLaboratorio(laboratorio.getNombre());
 	}
 }
+
 
 void cCentroTesteo::getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente)
 {

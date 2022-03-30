@@ -1,7 +1,7 @@
 #include "cPaciente.h"
 using namespace std;
 
-cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, string _laboratorio, string _centro, int _resultado)
+cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)
 {
 	nombre = _nombre;
 	apellido = _apellido;
@@ -13,8 +13,8 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	contactoEstrecho = _contactoEstrecho;
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
-	laboratorio = _laboratorio;
-	centro = _centro;
+	/*laboratorio = _laboratorio;
+	centro = _centro;*/
 	ResultadoTesteo = _resultado;
 }
 

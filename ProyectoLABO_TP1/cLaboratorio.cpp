@@ -1,14 +1,12 @@
 #include "cLaboratorio.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, cPaciente* _Paciente, bool _completo_l)
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l)
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
-	cPaciente* _Paciente = NULL;
 	completo_l = _completo_l = false;
-
 
 }
 

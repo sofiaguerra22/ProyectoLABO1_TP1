@@ -16,7 +16,7 @@ private:
 	cLaboratorio* Laboratorio;
 
 public:
-	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, cPaciente* _Paciente_c, cLaboratorio* _Laboratorio_c);
+	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c);
 	~cCentroTesteo();
 	//getters
 	void AsociarLaboratorio(cLaboratorio laboratorio, cPaciente paciente);//string Laboratorio_c.nombre);

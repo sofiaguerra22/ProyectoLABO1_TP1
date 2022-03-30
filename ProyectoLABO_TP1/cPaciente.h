@@ -14,7 +14,7 @@ private:
 	int ResultadoTesteo;
 
 public:
-	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, string _laboratorio, string _centro, int _resultado);
+	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado);
 	~cPaciente();
 	void setLaboratorio(cLaboratorio laboratorio);
 	/*string getNombre() { return nombre; };
@@ -30,6 +30,7 @@ public:
 	void setResultado(cLaboratorio laboratorio, cPaciente paciente);
 	int getResultado() { return ResultadoTesteo; };
 	void setCentro(cCentroTesteo centro);
+	string getCentro() { return centro; };
 
 };
 
