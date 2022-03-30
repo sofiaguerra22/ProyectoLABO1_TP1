@@ -36,27 +36,27 @@ bool cLaboratorio::getCompleto()
 int cLaboratorio::AnalisisMuestra(cPaciente paciente) //devuelve el numero del enum correspondiente al resultado
 {
 	int counter = 0;
-	if (paciente.getContactoEstrecho() = true)
+	if (paciente.getContactoEstrecho() == true)
 	{
 		counter++;
 	}
-	if (paciente.getDolorGarganta() = true)
+	if (paciente.getDolorGarganta() == true)
 	{
 		counter++;
 	}
-	if (paciente.getDolorCabeza() = true)
+	if (paciente.getDolorCabeza() == true)
 	{
 		counter++;
 	}
-	if (paciente.getFiebre() = true)
+	if (paciente.getFiebre() == true)
 	{
 		counter++;
 	}
-	if (paciente.getMocos() = true)
+	if (paciente.getMocos() == true)
 	{
 		counter++;
 	}
-	if (paciente.getTos() = true)
+	if (paciente.getTos() == true)
 	{
 		counter++;
 	}

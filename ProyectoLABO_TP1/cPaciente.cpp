@@ -22,9 +22,9 @@ cPaciente::~cPaciente()
 {
 }
 
-void cPaciente::setLaboratorio(cLaboratorio laboratorio)
+void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)
 {
-	laboratorio = laboratorio.getNombre();
+	_laboratorio = laboratorio.getNombre();
 }
 
 void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)
@@ -32,7 +32,7 @@ void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)
 	ResultadoTesteo = laboratorio.AnalisisMuestra(paciente);
 }
 
-void cPaciente::setCentro(cCentroTesteo centro)
+void cPaciente::setCentro(cCentroTesteo centro, string _centro)
 {
-	centro = centro.getNombre();
+	_centro = centro.getNombre();
 }

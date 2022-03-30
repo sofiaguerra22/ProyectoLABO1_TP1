@@ -9,7 +9,7 @@ class cLaboratorio
 private:
 	string ID, nombre;
 	int comuna;
-	cPaciente *Paciente_l = NULL;
+	//cPaciente Paciente_l = NULL;
 	bool completo_l;
 
 public:

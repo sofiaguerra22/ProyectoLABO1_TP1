@@ -14,7 +14,7 @@ void cCentroTesteo::AsociarLaboratorio(cLaboratorio laboratorio, cPaciente pacie
 {
 	if ((laboratorio.getCompleto()) == false)
 	{
-		paciente.setLaboratorio(laboratorio.getNombre());
+		paciente.setLaboratorio(laboratorio.getNombre(), laboratorio);
 	}
 }
 
@@ -25,13 +25,13 @@ void cCentroTesteo::getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2
 	if (centro1.completo_c == false)
 	{
 		counter1++;
-		paciente.setCentro(centro1.getNombre());
+		paciente.setCentro(centro1,centro1.getNombre());
 
 	}
 	else if (centro2.completo_c == false)
 	{
 		counter2++;
-		paciente.setCentro(centro2.getNombre());
+		paciente.setCentro(centro2,centro2.getNombre());
 	}
 }
 
