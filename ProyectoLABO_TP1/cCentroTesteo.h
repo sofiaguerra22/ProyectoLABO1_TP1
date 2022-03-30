@@ -11,18 +11,21 @@ private:
 
 	string ID, nombre;
 	int comuna;
-	bool completo;
-	cPaciente* Paciente_c = NULL;
-	cLaboratorio* Laboratorio_c = NULL;
+	bool completo_c;
+	cPaciente* Paciente_c; 
+	cLaboratorio* Laboratorio;
 
 public:
-	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo, cPaciente* _Paciente_c, cLaboratorio* _Laboratorio_c);
+	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, cPaciente* _Paciente_c, cLaboratorio* _Laboratorio_c);
 	~cCentroTesteo();
 	//getters
-	void getAsociarLaboratorio();//string Laboratorio_c.nombre);
-	void getAltaPaciente();//string Paciente_c.nombre);
+	void AsociarLaboratorio(cLaboratorio laboratorio, cPaciente paciente);//string Laboratorio_c.nombre);
+	void getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente);
 	void getMandarTesteo();
-	void BajaPaciente();
+	void BajaPaciente(cPaciente paciente);
+	void to_string();
+	void Imprimir();
+	string getNombre() { return nombre; };
 	 
 };
 

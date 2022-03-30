@@ -13,21 +13,21 @@ private:
 	bool completo_l;
 
 public:
-	cLaboratorio(string _ID, string _nombre, int _comuna, cPaciente*_Paciente, bool _completo);
+	cLaboratorio(string _ID, string _nombre, int _comuna, cPaciente*_Paciente, bool _completo_l);
 	~cLaboratorio();
 	//getters
 	void getRecibirMuestra(cPaciente* Paciente) {
 
 	}
-	void getAnalisisMuestra(){}
-	void getAvisarPacientes(){}
+	void CapacidadLaboratorio();
+	bool getCompleto(); //devuelve si el laboratorio está completo
+	void recibirMuestra(cPaciente paciente); //analiza si hay espacio para analizar la muestra
+	int AnalisisMuestra(cPaciente paciente);
+	void getAvisarPacientes();
+	void to_string();
+	void Imprimir();
+	string getNombre();
+
 	//setters, el codigo en si de las funciones 
 };
 
-/*cLaboratorio::cLaboratorio()
-{
-}
-
-cLaboratorio::~cLaboratorio()
-{
-}*/
