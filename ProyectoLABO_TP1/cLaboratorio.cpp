@@ -1,13 +1,15 @@
 #include "cLaboratorio.h"
+#include "cPaciente.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente)//constructor
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad, cPaciente* _paciente)//constructor
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
 	completo_l = _completo_l = false;
 	paciente = _paciente; //CONSULTAR
+	capacidad = _capacidad;
 }
 
 cLaboratorio::~cLaboratorio()//destructor
@@ -16,13 +18,12 @@ cLaboratorio::~cLaboratorio()//destructor
 
 void cLaboratorio::CapacidadLaboratorio() //funcion que cuenta la capacidad del laboratorio
 {
-	int contador;
-	if (contador < 2)//si tiene menos de 2 pacientes, no esta completo
+	if (capacidad < 2)//si tiene menos de 2 pacientes, no esta completo
 	{
-		contador++;
+		capacidad++;
 		completo_l = false;
 	}
-	if (contador == 2)//si tiene 2 pacientes, esta completo
+	if (capacidad == 2)//si tiene 2 pacientes, esta completo
 	{
 		completo_l = true;
 	}
@@ -33,30 +34,30 @@ bool cLaboratorio::getCompleto()//devuelvo un false/true dependiendo si esta com
 	return completo_l;
 }
 
-int cLaboratorio::AnalisisMuestra(cPaciente paciente) //cuenta los sintomas y devuelve el numero del enum correspondiente al resultado
+int cLaboratorio::AnalisisMuestra(cPaciente* paciente) //cuenta los sintomas y devuelve el numero del enum correspondiente al resultado
 {
 	int counter = 0;
-	if (paciente.getContactoEstrecho() == true)
+	if (paciente->getContactoEstrecho() == true)
 	{
 		counter++;
 	}
-	if (paciente.getDolorGarganta() == true)
+	if (paciente->getDolorGarganta() == true)
 	{
 		counter++;
 	}
-	if (paciente.getDolorCabeza() == true)
+	if (paciente->getDolorCabeza() == true)
 	{
 		counter++;
 	}
-	if (paciente.getFiebre() == true)
+	if (paciente->getFiebre() == true)
 	{
 		counter++;
 	}
-	if (paciente.getMocos() == true)
+	if (paciente->getMocos() == true)
 	{
 		counter++;
 	}
-	if (paciente.getTos() == true)
+	if (paciente->getTos() == true)
 	{
 		counter++;
 	}
@@ -71,7 +72,7 @@ int cLaboratorio::AnalisisMuestra(cPaciente paciente) //cuenta los sintomas y de
 	else
 		return 0;//sin resultado
 }
-void cLaboratorio::recibirMuestra(cPaciente paciente)
+void cLaboratorio::recibirMuestra(cPaciente* paciente)
 {
 if (completo_l ==true){
 	printf("Laboratorio completo. No se pueden recibir mas muestras.");
@@ -83,7 +84,7 @@ void cLaboratorio::getAvisarPacientes()
 {
 }
 
-string cLaboratorio::to_string(int var_int)
+string cLaboratorio::tostring(int var_int)
 {
 	string var_string = to_string(var_int);
 	return var_string;

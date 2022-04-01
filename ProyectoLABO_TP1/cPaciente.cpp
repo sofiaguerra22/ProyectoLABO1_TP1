@@ -1,4 +1,5 @@
 #include "cPaciente.h"
+#include "cCentroTesteo.h"
 using namespace std;
 
 cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro)//constructor
@@ -15,27 +16,27 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
 	ResultadoTesteo = _resultado;
-	this->centro = new cCentroTesteo();
+	this->centro = _centro;
 }
 
 cPaciente::~cPaciente()//destructor
 {
-	delete centro;
+	
 }
 
-/*void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
+void cPaciente::setLaboratorio(string _laboratorio)//asigna los nombres a los laboratorios
 {
-	_laboratorio = laboratorio.getNombre();
-}*/ //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
+	nombre_laboratorio = _laboratorio;
+} //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
 
 void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna los resultados
 {
 	ResultadoTesteo = centro->getResultado(paciente);
 }
 
-void cPaciente::setCentro(cCentroTesteo centro)
+void cPaciente::setCentro(cCentroTesteo* centro)
 {
-	nombre_centro = centro.getNombre();
+	nombre_centro = centro->getNombre();
 }
 
 void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus sintomas 
@@ -54,7 +55,7 @@ void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus s
 	cout << "resultado testeo: " << to_string(ResultadoTesteo) << endl;
 }
 
-string cPaciente::to_string(int var_int) //pasa la variable int a string
+string cPaciente::tostring(int var_int) //pasa la variable int a string
 {
 	string var_string = to_string(var_int);
 	return var_string;
