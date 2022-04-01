@@ -16,7 +16,7 @@ int main()
 	
 	paciente1->setCentro(centro1);
 	centro1->Asociarlaboratorio(laboratorio1, paciente1);//asocie a juan a el laboratorio y el centro 1
-	cout << "" << paciente1->getCentro() << endl;
+	cout << "" << paciente1->getCentro() << endl; //hola
 	paciente1->setResultado(centro1, paciente1);
 	cout << "" << paciente1->getResultado() << endl;
 	
