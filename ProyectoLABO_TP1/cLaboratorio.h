@@ -3,7 +3,7 @@
 #include <string>
 #include "cPaciente.h"
 using namespace std;
-
+class cCentroTesteo;
 class cLaboratorio
 {
 private:
@@ -13,16 +13,16 @@ private:
 	bool completo_l;
 
 public:
-	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente);
+	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente* _paciente);
 	~cLaboratorio();
 	//getters
-	void getRecibirMuestra(cPaciente paciente) {
+	void getRecibirMuestra(cPaciente* paciente) {
 
 	}
 	void CapacidadLaboratorio();
 	bool getCompleto(); //devuelve si el laboratorio está completo
-	void recibirMuestra(cPaciente paciente); //analiza si hay espacio para analizar la muestra
-	int AnalisisMuestra(cPaciente paciente);
+	void recibirMuestra(cPaciente* paciente); //analiza si hay espacio para analizar la muestra
+	int AnalisisMuestra(cPaciente* paciente);
 	void getAvisarPacientes();
 	string to_string(int var_int);
 	void Imprimir();

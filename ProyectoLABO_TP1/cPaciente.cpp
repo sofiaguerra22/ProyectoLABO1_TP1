@@ -15,18 +15,18 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
 	ResultadoTesteo = _resultado;
-	this->centro = new cCentroTesteo();
+	this->centro = _centro;
 }
 
 cPaciente::~cPaciente()//destructor
 {
-	delete centro;
+	
 }
 
-/*void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
+void cPaciente::setLaboratorio(string _laboratorio)//asigna los nombres a los laboratorios
 {
-	_laboratorio = laboratorio.getNombre();
-}*/ //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
+	nombre_laboratorio = _laboratorio;
+} //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
 
 void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna los resultados
 {

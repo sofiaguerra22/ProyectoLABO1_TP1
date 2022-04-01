@@ -9,7 +9,7 @@ enum ResultadoTesteo { SINRESUL, POSITIVO, NEGATIVO };
 class cPaciente
 {
 private:
-	string nombre, apellido, DNI, telefono, nombre_centro;
+	string nombre, apellido, DNI, telefono, nombre_centro, nombre_laboratorio;
 	bool fiebre, tos, mocos, contactoEstrecho, dolorCabeza, dolorGarganta;
 	int ResultadoTesteo;
 	cCentroTesteo* centro;
@@ -19,7 +19,7 @@ private:
 public:
 	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo *_centro);
 	~cPaciente();
-	//void setLaboratorio(string _laboratorio, cLaboratorio laboratorio);
+	void setLaboratorio(string _laboratorio);
 	/*string getNombre() { return nombre; };
 	string getApellido() { return apellido; };
 	string getDNI() { return DNI; };

@@ -3,7 +3,7 @@
 #include <string>
 #include "cLaboratorio.h"
 using namespace std;
-
+class cPaciente; //forward declaration
 class cCentroTesteo
 {
 private:

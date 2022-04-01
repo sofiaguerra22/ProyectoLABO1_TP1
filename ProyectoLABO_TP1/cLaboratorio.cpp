@@ -1,7 +1,8 @@
 #include "cLaboratorio.h"
+#include "cPaciente.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente)//constructor
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente* _paciente)//constructor
 {
 	ID = _ID;
 	nombre = _nombre;
@@ -33,7 +34,7 @@ bool cLaboratorio::getCompleto()//devuelvo un false/true dependiendo si esta com
 	return completo_l;
 }
 
-int cLaboratorio::AnalisisMuestra(cPaciente paciente) //cuenta los sintomas y devuelve el numero del enum correspondiente al resultado
+int cLaboratorio::AnalisisMuestra(cPaciente* paciente) //cuenta los sintomas y devuelve el numero del enum correspondiente al resultado
 {
 	int counter = 0;
 	if (paciente.getContactoEstrecho() == true)
@@ -71,7 +72,7 @@ int cLaboratorio::AnalisisMuestra(cPaciente paciente) //cuenta los sintomas y de
 	else
 		return 0;//sin resultado
 }
-void cLaboratorio::recibirMuestra(cPaciente paciente)
+void cLaboratorio::recibirMuestra(cPaciente* paciente)
 {
 if (completo_l ==true){
 	printf("Laboratorio completo. No se pueden recibir mas muestras.");
