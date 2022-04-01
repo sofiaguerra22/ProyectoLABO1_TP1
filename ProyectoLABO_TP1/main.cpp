@@ -14,7 +14,7 @@ int main()
 
 	cPaciente* paciente1 = new cPaciente("Juan", "Perez", "434462", "11534242", false, false, true, true, false, false, 0);
 
-	centro1->AsociarLaboratorio(*laboratorio1, *paciente1); //asocie a juan a el laboratorio y el centro 1
+	centro1->Asociarlaboratorio(*laboratorio1, *paciente1);//asocie a juan a el laboratorio y el centro 1
 	paciente1->setCentro(*centro1, centro1->getNombre());
 	cout << "" << paciente1->getCentro() << endl;
 	paciente1->setResultado(*laboratorio1, *paciente1);

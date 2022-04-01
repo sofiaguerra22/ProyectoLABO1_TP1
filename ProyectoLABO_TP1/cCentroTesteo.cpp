@@ -17,7 +17,7 @@ void cCentroTesteo::Asociarlaboratorio(cLaboratorio laboratorio, cPaciente pacie
 {
 	if ((laboratorio.getCompleto()) == false)
 	{
-		paciente.setLaboratorio(laboratorio.getNombre(), laboratorio);
+		paciente.setLaboratorio(laboratorio);
 	}
 }
 
