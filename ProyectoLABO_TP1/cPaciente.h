@@ -12,12 +12,12 @@ private:
 	string nombre, apellido, DNI, telefono, nombre_centro, nombre_laboratorio;
 	bool fiebre, tos, mocos, contactoEstrecho, dolorCabeza, dolorGarganta;
 	int ResultadoTesteo;
-	cCentroTesteo* centro;
+	cCentroTesteo* centro; //PREGUNTAR!!!!!!!!
 	//cLaboratorio* laboratorio;
 
 
 public:
-	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo *_centro);
+	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro);
 	~cPaciente();
 	void setLaboratorio(string _laboratorio);
 	/*string getNombre() { return nombre; };
@@ -32,9 +32,9 @@ public:
 	bool getDolorGarganta() { return dolorGarganta; };
 	void setResultado(cCentroTesteo* centro, cPaciente* paciente);
 	int getResultado() { return ResultadoTesteo; };
-	void setCentro(cCentroTesteo centro);
+	void setCentro(cCentroTesteo* centro);
 	string getCentro() { return nombre_centro; };
 	void imprimir();
-	string to_string(int var_int);
+	string tostring(int var_int);
 };
 

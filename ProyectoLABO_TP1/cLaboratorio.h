@@ -1,19 +1,19 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "cPaciente.h"
 using namespace std;
 class cCentroTesteo;
+class cPaciente; 
 class cLaboratorio
 {
 private:
 	string ID, nombre;
-	int comuna;
-	cPaciente* paciente;
+	int comuna, capacidad;
+	cPaciente* paciente; 
 	bool completo_l;
 
 public:
-	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente* _paciente);
+	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad, cPaciente* _paciente);
 	~cLaboratorio();
 	//getters
 	void getRecibirMuestra(cPaciente* paciente) {
@@ -24,7 +24,7 @@ public:
 	void recibirMuestra(cPaciente* paciente); //analiza si hay espacio para analizar la muestra
 	int AnalisisMuestra(cPaciente* paciente);
 	void getAvisarPacientes();
-	string to_string(int var_int);
+	string tostring(int var_int);
 	void Imprimir();
 	string getNombre();
 

@@ -1,4 +1,5 @@
 #include "cPaciente.h"
+#include "cCentroTesteo.h"
 using namespace std;
 
 cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro)//constructor
@@ -33,9 +34,9 @@ void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna
 	ResultadoTesteo = centro->getResultado(paciente);
 }
 
-void cPaciente::setCentro(cCentroTesteo centro)
+void cPaciente::setCentro(cCentroTesteo* centro)
 {
-	nombre_centro = centro.getNombre();
+	nombre_centro = centro->getNombre();
 }
 
 void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus sintomas 
@@ -54,7 +55,7 @@ void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus s
 	cout << "resultado testeo: " << to_string(ResultadoTesteo) << endl;
 }
 
-string cPaciente::to_string(int var_int) //pasa la variable int a string
+string cPaciente::tostring(int var_int) //pasa la variable int a string
 {
 	string var_string = to_string(var_int);
 	return var_string;
