@@ -58,3 +58,9 @@ string cCentroTesteo::to_string(int var_int)
 void cCentroTesteo::Imprimir()
 {
 }
+
+int cCentroTesteo::getResultado(cPaciente* paciente)
+{
+	int resultado = laboratorio->AnalisisMuestra(*paciente);
+	return resultado;
+}

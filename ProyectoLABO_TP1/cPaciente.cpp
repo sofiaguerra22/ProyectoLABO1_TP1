@@ -1,7 +1,7 @@
 #include "cPaciente.h"
 using namespace std;
 
-cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)//constructor
+cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro)//constructor
 {
 
 	nombre = _nombre;
@@ -15,20 +15,22 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
 	ResultadoTesteo = _resultado;
+	this->centro = new cCentroTesteo();
 }
 
 cPaciente::~cPaciente()//destructor
 {
+	delete centro;
 }
 
-void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
+/*void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
 {
 	_laboratorio = laboratorio.getNombre();
-}
+}*/ //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
 
-void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)//asigna los resultados
+void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna los resultados
 {
-	ResultadoTesteo = laboratorio.AnalisisMuestra(paciente);
+	ResultadoTesteo = centro->getResultado(paciente);
 }
 
 void cPaciente::setCentro(cCentroTesteo centro)

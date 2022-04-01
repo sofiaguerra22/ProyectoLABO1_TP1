@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "cPaciente.h"
 #include "cLaboratorio.h"
 using namespace std;
 
@@ -12,8 +11,8 @@ private:
 	string ID, nombre;
 	int comuna;
 	bool completo_c;
-	cPaciente paciente; 
-	cLaboratorio laboratorio;
+	cPaciente* paciente; 
+	cLaboratorio* laboratorio;
 
 public:
 	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c);
@@ -26,6 +25,7 @@ public:
 	string to_string(int var_int);
 	void Imprimir();
 	string getNombre() { return nombre; };
+	int getResultado(cPaciente* paciente);
 	 
 };
 
