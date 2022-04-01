@@ -2,13 +2,12 @@
 #include "cPaciente.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad, cPaciente* _paciente)//constructor
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad)//constructor
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
-	completo_l = _completo_l = false;
-	paciente = _paciente; //CONSULTAR
+	completo_l = _completo_l = false; 
 	capacidad = _capacidad;
 }
 

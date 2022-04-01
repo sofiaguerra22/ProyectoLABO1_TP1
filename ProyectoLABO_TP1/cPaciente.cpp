@@ -2,7 +2,7 @@
 #include "cCentroTesteo.h"
 using namespace std;
 
-cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro)//constructor
+cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)//constructor
 {
 
 	nombre = _nombre;
@@ -16,7 +16,6 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
 	ResultadoTesteo = _resultado;
-	this->centro = _centro;
 }
 
 cPaciente::~cPaciente()//destructor

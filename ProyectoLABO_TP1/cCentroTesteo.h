@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-//#include "cPaciente.h"
-//#include "cLaboratorio.h"
 class cPaciente;
 class cLaboratorio;
 using namespace std;

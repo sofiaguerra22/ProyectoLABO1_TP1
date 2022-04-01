@@ -1,5 +1,6 @@
 #include "cCentroTesteo.h"
 #include "cPaciente.h"
+#include "cLaboratorio.h"
 using namespace std;
 cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, int _capacidad)
 {

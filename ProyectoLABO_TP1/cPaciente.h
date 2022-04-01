@@ -13,12 +13,12 @@ private:
 	string nombre, apellido, DNI, telefono, nombre_centro, nombre_laboratorio;
 	bool fiebre, tos, mocos, contactoEstrecho, dolorCabeza, dolorGarganta;
 	int ResultadoTesteo;
-	cCentroTesteo* centro; //PREGUNTAR!!!!!!!!
+	cCentroTesteo* centro;
 	//cLaboratorio* laboratorio;
 
 
 public:
-	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro);
+	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado);
 	~cPaciente();
 	void setLaboratorio(string _laboratorio);
 	/*string getNombre() { return nombre; };

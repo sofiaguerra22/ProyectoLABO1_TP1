@@ -13,7 +13,7 @@ private:
 	bool completo_l;
 
 public:
-	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad, cPaciente* _paciente);
+	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad);
 	~cLaboratorio();
 	//getters
 	void getRecibirMuestra(cPaciente* paciente) {
