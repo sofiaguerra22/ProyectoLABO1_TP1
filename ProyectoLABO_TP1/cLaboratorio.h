@@ -24,7 +24,7 @@ public:
 	void recibirMuestra(cPaciente paciente); //analiza si hay espacio para analizar la muestra
 	int AnalisisMuestra(cPaciente paciente);
 	void getAvisarPacientes();
-	void to_string();
+	string to_string(int var_int);
 	void Imprimir();
 	string getNombre();
 

@@ -1,7 +1,7 @@
 #include "cPaciente.h"
 using namespace std;
 
-cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)
+cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)//constructor
 {
 
 	nombre = _nombre;
@@ -17,16 +17,16 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	ResultadoTesteo = _resultado;
 }
 
-cPaciente::~cPaciente()
+cPaciente::~cPaciente()//destructor
 {
 }
 
-void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)
+void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
 {
 	_laboratorio = laboratorio.getNombre();
 }
 
-void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)
+void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)//asigna los resultados
 {
 	ResultadoTesteo = laboratorio.AnalisisMuestra(paciente);
 }
@@ -36,7 +36,7 @@ void cPaciente::setCentro(cCentroTesteo centro)
 	nombre_centro = centro.getNombre();
 }
 
-void cPaciente::imprimir() {
+void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus sintomas 
 	cout << "DATOS DEL PACIENTE:" << endl;
 	cout << "Nombre: " << nombre << endl;
 	cout << "Apellido: " << apellido << endl;
@@ -49,5 +49,11 @@ void cPaciente::imprimir() {
 	cout << "contacto estrecho: " << contactoEstrecho << endl;
 	cout << "dolor cabeza: " << dolorCabeza << endl;
 	cout << "dolor garganta: " << dolorGarganta << endl;
-	cout << "resultado testeo: " << setResultado << endl;
+	cout << "resultado testeo: " << to_string(ResultadoTesteo) << endl;
+}
+
+string cPaciente::to_string(int var_int) //pasa la variable int a string
+{
+	string var_string = to_string(var_int);
+	return var_string;
 }

@@ -35,5 +35,6 @@ public:
 	void setCentro(cCentroTesteo centro);
 	string getCentro() { return nombre_centro; };
 	void imprimir();
+	string to_string(int var_int);
 };
 

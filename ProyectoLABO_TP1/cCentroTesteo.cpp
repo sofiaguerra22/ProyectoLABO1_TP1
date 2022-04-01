@@ -49,9 +49,10 @@ void cCentroTesteo::BajaPaciente(cPaciente paciente) //recibe el resultado del t
 	}
 }
 
-void cCentroTesteo::to_string()
+string cCentroTesteo::to_string(int var_int)
 {
-
+	string var_string = to_string(var_int);
+	return var_string;
 }
 
 void cCentroTesteo::Imprimir()

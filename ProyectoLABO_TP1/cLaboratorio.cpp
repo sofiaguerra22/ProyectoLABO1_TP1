@@ -1,5 +1,4 @@
 #include "cLaboratorio.h"
-#include "cPaciente.h"
 using namespace std;
 
 cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente)//constructor
@@ -84,12 +83,19 @@ void cLaboratorio::getAvisarPacientes()
 {
 }
 
-void cLaboratorio::to_string()
+string cLaboratorio::to_string(int var_int)
 {
+	string var_string = to_string(var_int);
+	return var_string;
 }
 
 void cLaboratorio::Imprimir()
 {
+    cout << "DATOS DEL LABORATORIO:" << endl;
+	cout << "ID: " << ID << endl;
+	cout << "Nombre: " << nombre << endl;
+	cout << "Comuna: " << comuna << endl;
+
 }
 
 string cLaboratorio::getNombre()

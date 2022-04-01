@@ -23,7 +23,7 @@ public:
 	void getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente);
 	void getMandarTesteo();
 	void BajaPaciente(cPaciente paciente);
-	void to_string();
+	string to_string(int var_int);
 	void Imprimir();
 	string getNombre() { return nombre; };
 	 
