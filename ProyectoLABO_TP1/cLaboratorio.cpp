@@ -15,6 +15,15 @@ cLaboratorio::~cLaboratorio()//destructor
 {
 }
 
+void cLaboratorio::LaboratorioCompleto()
+{
+	if (capacidad >= 2)
+		completo_l = true;
+	else if (capacidad < 2)
+		completo_l = false;
+
+}
+
 void cLaboratorio::CapacidadLaboratorio() //funcion que cuenta la capacidad del laboratorio
 {
 	if (capacidad < 2)//si tiene menos de 2 pacientes, no esta completo
@@ -83,13 +92,26 @@ void cLaboratorio::getAvisarPacientes()
 {
 }
 
+bool cLaboratorio::AltaPaciente_l(cLaboratorio* laboratorio, cPaciente* paciente)
+{
+	if (laboratorio->completo_l == false)
+	{
+		laboratorio->capacidad++;
+		paciente->setLaboratorio(laboratorio->getNombre());
+		LaboratorioCompleto();
+		return true;
+	}
+	else
+		return false;
+}
+
 string cLaboratorio::tostring(int var_int)
 {
 	string var_string = to_string(var_int);
 	return var_string;
 }
 
-void cLaboratorio::Imprimir()
+void cLaboratorio::imprimir_l()
 {
     cout << "DATOS DEL LABORATORIO:" << endl;
 	cout << "ID: " << ID << endl;

@@ -17,15 +17,16 @@ public:
 	~cLaboratorio();
 	//getters
 	void getRecibirMuestra(cPaciente* paciente) {
-
 	}
+	void LaboratorioCompleto();
 	void CapacidadLaboratorio();
 	bool getCompleto(); //devuelve si el laboratorio está completo
 	void recibirMuestra(cPaciente* paciente); //analiza si hay espacio para analizar la muestra
 	int AnalisisMuestra(cPaciente* paciente);
 	void getAvisarPacientes();
+	bool AltaPaciente_l(cLaboratorio* laboratorio, cPaciente* paciente);
 	string tostring(int var_int);
-	void Imprimir();
+	void imprimir_l();
 	string getNombre();
 
 	//setters, el codigo en si de las funciones 

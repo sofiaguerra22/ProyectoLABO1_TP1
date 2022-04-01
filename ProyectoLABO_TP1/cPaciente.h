@@ -21,8 +21,8 @@ public:
 	cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado);
 	~cPaciente();
 	void setLaboratorio(string _laboratorio);
-	/*string getNombre() { return nombre; };
-	string getApellido() { return apellido; };
+	string getNombre() { return nombre; };
+	/*string getApellido() { return apellido; };
 	string getDNI() { return DNI; };
 	string getTelefono(){ return telefono;};*/
 	bool getFiebre() { return fiebre; };
@@ -35,7 +35,8 @@ public:
 	int getResultado() { return ResultadoTesteo; };
 	void setCentro(cCentroTesteo* centro);
 	string getCentro() { return nombre_centro; };
-	void imprimir();
+	void imprimir_p();
 	string tostring(int var_int);
+	int ContadorSintomas();
 };
 

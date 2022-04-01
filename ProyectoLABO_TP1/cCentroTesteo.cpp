@@ -16,27 +16,28 @@ cCentroTesteo::~cCentroTesteo()
 
 
 
-void cCentroTesteo::Asociarlaboratorio(cLaboratorio* laboratorio, cPaciente* paciente)
+void cCentroTesteo::CentroCompleto()
 {
-	if ((laboratorio->getCompleto()) == false)
-	{
-		paciente->setLaboratorio(laboratorio->getNombre());
-	}
+	if (capacidad >= 2)
+		completo_c = true;
+	else if (capacidad < 2)
+		completo_c = false;
+
 }
 
-void cCentroTesteo::AltaPaciente(cCentroTesteo* centro1, cCentroTesteo* centro2, cPaciente* paciente)
-{
-	if (centro1->completo_c == false)
-	{
-		centro1->capacidad++;
-		paciente->setCentro(centro1);
 
-	}
-	else if (centro2->completo_c == false)
+bool cCentroTesteo::AltaPaciente_c(cCentroTesteo* centro, cPaciente* paciente)
+{
+	if (centro->completo_c == false)
 	{
-		centro1->capacidad++;
-		paciente->setCentro(centro2);
+		centro->capacidad++;
+		paciente->setCentro(centro);
+		CentroCompleto();
+		return true;
 	}
+	else
+		return false;
+
 }
 
 void cCentroTesteo::getMandarTesteo()
@@ -57,11 +58,14 @@ string cCentroTesteo::tostring(int var_int)
 	return var_string;
 }
 
-void cCentroTesteo::Imprimir()
+void cCentroTesteo::imprimir_c() //imprime los datos del centro
 {
+	cout << "ID:" << ID << endl;
+	cout << "Nombre:" << nombre << endl; 
+	cout << "Comuna:" << comuna << endl; 
 }
 
-int cCentroTesteo::getResultado(cPaciente* paciente)
+int cCentroTesteo::getResultado(cPaciente* paciente, cLaboratorio* laboratorio)
 {
 	int resultado = laboratorio->AnalisisMuestra(paciente);
 	return resultado;

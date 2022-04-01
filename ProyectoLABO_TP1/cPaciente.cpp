@@ -38,24 +38,49 @@ void cPaciente::setCentro(cCentroTesteo* centro)
 	nombre_centro = centro->getNombre();
 }
 
-void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus sintomas 
+void cPaciente::imprimir_p() {//imprime los datos de los pacientes junto con sus sintomas 
 	cout << "DATOS DEL PACIENTE:" << endl;
 	cout << "Nombre: " << nombre << endl;
 	cout << "Apellido: " << apellido << endl;
 	cout << "DNI: " << DNI << endl;
 	cout << "telefono: " << telefono << endl;
-	cout << "SINTOMAS QUE POSEE:" << endl;
-	cout << "fiebre: " << fiebre << endl;
-	cout << "tos: " << tos << endl;
-	cout << "mocos: " << mocos << endl;
-	cout << "contacto estrecho: " << contactoEstrecho << endl;
-	cout << "dolor cabeza: " << dolorCabeza << endl;
-	cout << "dolor garganta: " << dolorGarganta << endl;
-	cout << "resultado testeo: " << to_string(ResultadoTesteo) << endl;
+	cout << "CANTIDAD SINTOMAS POSITIVOS:" << endl;
+	cout <<"" << tostring(ContadorSintomas()) << endl;
+	cout << "resultado testeo: " << tostring(ResultadoTesteo) << endl;
 }
 
 string cPaciente::tostring(int var_int) //pasa la variable int a string
 {
 	string var_string = to_string(var_int);
 	return var_string;
+}
+
+int cPaciente::ContadorSintomas()
+{
+	int counter = 0;
+	if (contactoEstrecho == true)
+	{
+		counter++;
+	}
+	if (dolorGarganta == true)
+	{
+		counter++;
+	}
+	if (dolorCabeza == true)
+	{
+		counter++;
+	}
+	if (fiebre == true)
+	{
+		counter++;
+	}
+	if (mocos == true)
+	{
+		counter++;
+	}
+	if (tos == true)
+	{
+		counter++;
+	}
+	return counter;
 }
