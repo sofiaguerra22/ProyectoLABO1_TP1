@@ -25,19 +25,19 @@ int main()
 	//inicializacion paciente1
 	cCentroTesteo* centro_aux1 = AsignarCentro(centro1, centro2, paciente1);//centroaux1 porque es el centro al que se asigna el paciente1
 	cLaboratorio* labo_aux1 = AsignarLaboratorio(laboratorio1, laboratorio2, paciente1);
-	centro_aux1->getResultado(paciente1, labo_aux1);
+	paciente1->setResultado(centro_aux1, paciente1, labo_aux1);
 	cout << "\nEl resultado del paciente " << paciente1->getNombre() << " es: " << paciente1->getResultado() << endl;
 
 	//inicializacion paciente2:
 	cCentroTesteo* centro_aux2 = AsignarCentro(centro1, centro2, paciente2);
 	cLaboratorio* labo_aux2 = AsignarLaboratorio(laboratorio1, laboratorio2, paciente2);
-	paciente2->setResultado(centro_aux2, paciente2);
+	paciente2->setResultado(centro_aux2, paciente2, labo_aux2);
 	cout << "\nEl resultado del paciente " << paciente2->getNombre() << " es: " << paciente2->getResultado() << endl;
 
 	//inicializacion paciente3
 	cCentroTesteo* centro_aux3 = AsignarCentro(centro1, centro2, paciente3);
 	cLaboratorio* labo_aux3 = AsignarLaboratorio(laboratorio1, laboratorio2, paciente3);
-	paciente3->setResultado(centro_aux3, paciente3);
+	paciente3->setResultado(centro_aux3, paciente3, labo_aux3);
 	cout << "\nEl resultado del paciente " << paciente3->getNombre() << " es: " << paciente3->getResultado() << endl;
 	
 

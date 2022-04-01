@@ -69,11 +69,11 @@ int cLaboratorio::AnalisisMuestra(cPaciente* paciente) //cuenta los sintomas y d
 	{
 		counter++;
 	}
-	if (counter > 2)
+	if (counter >= 2)
 	{
 		return 1;// resultado positivo
 	}
-	if (counter <= 2)
+	if (counter < 2)
 	{
 		return 2;//resultado negativo
 	}
