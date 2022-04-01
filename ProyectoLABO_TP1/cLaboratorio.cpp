@@ -85,6 +85,7 @@ int cLaboratorio::AnalisisMuestra(cPaciente* paciente) //cuenta los sintomas y d
 
 string cLaboratorio::AvisarPacientes(int resultado)
 {
+
 	switch (resultado) {
 	case 0:
 		return "SINRESUL";

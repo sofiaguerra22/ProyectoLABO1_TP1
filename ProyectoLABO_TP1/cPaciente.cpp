@@ -84,3 +84,14 @@ int cPaciente::ContadorSintomas()
 	}
 	return counter;
 }
+
+/*string cPaciente::enumtostring(int ResultadoTesteo)
+{
+	switch (ResultadoTesteo) {
+	case ResultadoTesteo::NEGATIVO: return "NEGATIVO";
+	case ResultadoTesteo::POSITIVO: return "POSITIVO";
+	case ResultadoTesteo::SINRESUL: return "SINRESUL"
+
+	}
+	
+}*/

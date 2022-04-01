@@ -22,7 +22,7 @@ public:
 	~cPaciente();
 	void setLaboratorio(string _laboratorio);
 	string getNombre() { return nombre; };
-	/*string getApellido() { return apellido; };
+	/**string getApellido() { return apellido; };
 	string getDNI() { return DNI; };
 	string getTelefono(){ return telefono;};*/
 	bool getFiebre() { return fiebre; };
