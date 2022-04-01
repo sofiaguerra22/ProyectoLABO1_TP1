@@ -10,14 +10,16 @@ cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _comp
 cCentroTesteo::~cCentroTesteo()
 {
 }
-void cCentroTesteo::AsociarLaboratorio(cLaboratorio laboratorio, cPaciente paciente)
+
+
+
+void cCentroTesteo::Asociarlaboratorio(cLaboratorio laboratorio, cPaciente paciente)
 {
 	if ((laboratorio.getCompleto()) == false)
 	{
 		paciente.setLaboratorio(laboratorio.getNombre(), laboratorio);
 	}
 }
-
 
 void cCentroTesteo::getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente)
 {

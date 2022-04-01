@@ -19,7 +19,7 @@ public:
 	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c);
 	~cCentroTesteo();
 	//getters
-	void AsociarLaboratorio(cLaboratorio laboratorio, cPaciente paciente);
+	void Asociarlaboratorio(cLaboratorio laboratorio, cPaciente paciente);
 	void getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente);
 	void getMandarTesteo();
 	void BajaPaciente(cPaciente paciente);
