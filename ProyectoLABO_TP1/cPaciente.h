@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "cLaboratorio.h"
+class cLaboratorio;
 #include "cCentroTesteo.h"
+
 using namespace std;
 enum ResultadoTesteo { SINRESUL, POSITIVO, NEGATIVO };
 

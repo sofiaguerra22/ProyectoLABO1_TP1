@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "cPaciente.h"
+//#include "cPaciente.h"
 using namespace std;
-
+class cPaciente;
 class cLaboratorio
 {
 private:
