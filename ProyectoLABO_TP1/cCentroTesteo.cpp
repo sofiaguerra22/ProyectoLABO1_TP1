@@ -2,13 +2,14 @@
 #include "cPaciente.h"
 #include "cLaboratorio.h"
 using namespace std;
-cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, int _capacidad)
+cCentroTesteo::cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, int _capacidad, int _resultado)
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
 	completo_c = _completo_c;
 	capacidad = _capacidad;
+	ResultadoTesteo = _resultado;
 }
 cCentroTesteo::~cCentroTesteo()
 {
@@ -40,15 +41,17 @@ bool cCentroTesteo::AltaPaciente_c(cCentroTesteo* centro, cPaciente* paciente)
 
 }
 
-void cCentroTesteo::getMandarTesteo()
+void cCentroTesteo::MandarTesteo(cPaciente* paciente, cLaboratorio* laboratorio)
 {
+	ResultadoTesteo = laboratorio->AnalisisMuestra(paciente);
+	paciente->setResultado(ResultadoTesteo);
 }
 
 void cCentroTesteo::BajaPaciente(cPaciente* paciente) //recibe el resultado del testeo y si es positivo o negativo, le da de baja al paciente
 {
 	if (paciente->getResultado() == 1 || paciente->getResultado() == 2)
 	{
-		cPaciente *paciente = NULL;
+		paciente = NULL;
 	}
 }
 
@@ -65,8 +68,7 @@ void cCentroTesteo::imprimir_c() //imprime los datos del centro
 	cout << "Comuna:" << comuna << endl; 
 }
 
-int cCentroTesteo::getResultado(cPaciente* paciente, cLaboratorio* laboratorio)
+int cCentroTesteo::getResultado()
 {
-	int resultado = laboratorio->AnalisisMuestra(paciente);
-	return resultado;
+	return ResultadoTesteo;
 }

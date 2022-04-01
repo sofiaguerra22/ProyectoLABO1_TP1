@@ -28,10 +28,9 @@ void cPaciente::setLaboratorio(string _laboratorio)//asigna los nombres a los la
 	nombre_laboratorio = _laboratorio;
 } //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
 
-void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente, cLaboratorio* laboratorio)//asigna los resultados
+void cPaciente::setResultado(int resultado)//asigna los resultados
 {
-	ResultadoTesteo = centro->getResultado(paciente, laboratorio);
-	centro->BajaPaciente(paciente);
+	ResultadoTesteo = resultado;
 }
 
 void cPaciente::setCentro(cCentroTesteo* centro)

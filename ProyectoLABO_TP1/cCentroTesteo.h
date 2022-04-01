@@ -14,19 +14,20 @@ private:
 	bool completo_c;
 	cPaciente* paciente; 
 	cLaboratorio* laboratorio;
+	int ResultadoTesteo;
 
 public:
-	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, int _capacidad);
+	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c, int _capacidad, int _resultado);
 	~cCentroTesteo();
 	//getters
 	void CentroCompleto();
 	bool AltaPaciente_c(cCentroTesteo* centro, cPaciente* paciente);
-	void getMandarTesteo();
+	void MandarTesteo(cPaciente* paciente, cLaboratorio* laboratorio);
 	void BajaPaciente(cPaciente* paciente);
 	string tostring(int var_int);
 	void imprimir_c();
 	string getNombre() { return nombre; };
-	int getResultado(cPaciente* paciente, cLaboratorio* laboratorio);
+	int getResultado();
 	 
 };
 

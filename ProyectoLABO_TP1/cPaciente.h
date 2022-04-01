@@ -31,7 +31,7 @@ public:
 	bool getContactoEstrecho() { return contactoEstrecho; };
 	bool getDolorCabeza() { return dolorCabeza; };
 	bool getDolorGarganta() { return dolorGarganta; };
-	void setResultado(cCentroTesteo* centro, cPaciente* paciente, cLaboratorio* laboratorio);
+	void setResultado(int resultado);
 	int getResultado() { return ResultadoTesteo; };
 	void setCentro(cCentroTesteo* centro);
 	string getCentro() { return nombre_centro; };

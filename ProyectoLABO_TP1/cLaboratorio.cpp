@@ -2,13 +2,14 @@
 #include "cPaciente.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad)//constructor
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, int _capacidad, int _resultado)//constructor
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
 	completo_l = _completo_l = false; 
 	capacidad = _capacidad;
+	resultado = _resultado;
 }
 
 cLaboratorio::~cLaboratorio()//destructor
@@ -80,19 +81,27 @@ int cLaboratorio::AnalisisMuestra(cPaciente* paciente) //cuenta los sintomas y d
 	else
 		return 0;//sin resultado
 }
-void cLaboratorio::recibirMuestra(cPaciente* paciente)
+
+
+string cLaboratorio::AvisarPacientes(int resultado)
 {
-if (completo_l ==true){
-	printf("Laboratorio completo. No se pueden recibir mas muestras.");
-}else if (completo_l==false){
-	printf("Se pudo recibir la muestra con exito.");
-}
-}
-void cLaboratorio::getAvisarPacientes()
-{
+	switch (resultado) {
+	case 0:
+		return "SINRESUL";
+		break;
+	case 1:
+		return "POSITIVO";
+		break;
+	case 2:
+		return "NEGATIVO";
+		break;
+	default:
+		return "SINRESUL";
+	}
+
 }
 
-bool cLaboratorio::AltaPaciente_l(cLaboratorio* laboratorio, cPaciente* paciente)
+bool cLaboratorio::RecibirMuestra(cLaboratorio* laboratorio, cPaciente* paciente) //es como el alta paciente del centro
 {
 	if (laboratorio->completo_l == false)
 	{
