@@ -37,7 +37,7 @@ void cCentroTesteo::getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2
 	}
 }
 
-void cCentroTesteo::getMandarTesteo()
+void cCentroTesteo::MandarTesteo()
 {
 }
 

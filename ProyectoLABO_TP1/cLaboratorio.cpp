@@ -1,5 +1,4 @@
 #include "cLaboratorio.h"
-#include "cPaciente.h"
 using namespace std;
 
 cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente* _paciente)//constructor

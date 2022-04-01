@@ -20,7 +20,7 @@ public:
 	//getters
 	void Asociarlaboratorio(cLaboratorio laboratorio, cPaciente paciente);
 	void getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2, cPaciente paciente);
-	void getMandarTesteo();
+	void MandarTesteo();
 	void BajaPaciente(cPaciente paciente);
 	string to_string(int var_int);
 	void Imprimir();

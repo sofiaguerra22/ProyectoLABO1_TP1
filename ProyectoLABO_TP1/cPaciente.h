@@ -32,7 +32,7 @@ public:
 	bool getDolorGarganta() { return dolorGarganta; };
 	void setResultado(cCentroTesteo* centro, cPaciente* paciente);
 	int getResultado() { return ResultadoTesteo; };
-	void setCentro(cCentroTesteo centro);
+	void setCentro(cCentroTesteo* centro);
 	string getCentro() { return nombre_centro; };
 	void imprimir();
 	string to_string(int var_int);

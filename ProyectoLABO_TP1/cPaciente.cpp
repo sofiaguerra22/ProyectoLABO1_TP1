@@ -33,7 +33,7 @@ void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna
 	ResultadoTesteo = centro->getResultado(paciente);
 }
 
-void cPaciente::setCentro(cCentroTesteo centro)
+void cPaciente::setCentro(cCentroTesteo* centro)
 {
 	nombre_centro = centro.getNombre();
 }
