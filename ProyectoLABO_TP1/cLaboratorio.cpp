@@ -1,39 +1,39 @@
 #include "cLaboratorio.h"
 using namespace std;
 
-cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l)
+cLaboratorio::cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente)//constructor
 {
 	ID = _ID;
 	nombre = _nombre;
 	comuna = _comuna;
 	completo_l = _completo_l = false;
-
+	paciente = _paciente; //CONSULTAR
 }
 
-cLaboratorio::~cLaboratorio()
+cLaboratorio::~cLaboratorio()//destructor
 {
 }
 
-void cLaboratorio::CapacidadLaboratorio() //funcion que cuenta los espacios del laboratorio
+void cLaboratorio::CapacidadLaboratorio() //funcion que cuenta la capacidad del laboratorio
 {
 	int contador;
-	if (contador < 2)
+	if (contador < 2)//si tiene menos de 2 pacientes, no esta completo
 	{
 		contador++;
 		completo_l = false;
 	}
-	if (contador == 2)
+	if (contador == 2)//si tiene 2 pacientes, esta completo
 	{
 		completo_l = true;
 	}
 }
 
-bool cLaboratorio::getCompleto()
+bool cLaboratorio::getCompleto()//devuelvo un false/true dependiendo si esta completo
 {
 	return completo_l;
 }
 
-int cLaboratorio::AnalisisMuestra(cPaciente paciente) //devuelve el numero del enum correspondiente al resultado
+int cLaboratorio::AnalisisMuestra(cPaciente paciente) //cuenta los sintomas y devuelve el numero del enum correspondiente al resultado
 {
 	int counter = 0;
 	if (paciente.getContactoEstrecho() == true)
@@ -83,12 +83,19 @@ void cLaboratorio::getAvisarPacientes()
 {
 }
 
-void cLaboratorio::to_string()
+string cLaboratorio::to_string(int var_int)
 {
+	string var_string = to_string(var_int);
+	return var_string;
 }
 
 void cLaboratorio::Imprimir()
 {
+    cout << "DATOS DEL LABORATORIO:" << endl;
+	cout << "ID: " << ID << endl;
+	cout << "Nombre: " << nombre << endl;
+	cout << "Comuna: " << comuna << endl;
+
 }
 
 string cLaboratorio::getNombre()

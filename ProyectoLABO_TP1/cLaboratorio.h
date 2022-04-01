@@ -9,14 +9,14 @@ class cLaboratorio
 private:
 	string ID, nombre;
 	int comuna;
-	//cPaciente Paciente_l = NULL;
+	cPaciente* paciente;
 	bool completo_l;
 
 public:
-	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l);
+	cLaboratorio(string _ID, string _nombre, int _comuna, bool _completo_l, cPaciente _paciente);
 	~cLaboratorio();
 	//getters
-	void getRecibirMuestra(cPaciente* Paciente) {
+	void getRecibirMuestra(cPaciente paciente) {
 
 	}
 	void CapacidadLaboratorio();
@@ -24,7 +24,7 @@ public:
 	void recibirMuestra(cPaciente paciente); //analiza si hay espacio para analizar la muestra
 	int AnalisisMuestra(cPaciente paciente);
 	void getAvisarPacientes();
-	void to_string();
+	string to_string(int var_int);
 	void Imprimir();
 	string getNombre();
 

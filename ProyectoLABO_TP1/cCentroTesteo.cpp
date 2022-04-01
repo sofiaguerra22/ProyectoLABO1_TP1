@@ -19,7 +19,7 @@ void cCentroTesteo::Asociarlaboratorio(cLaboratorio laboratorio, cPaciente pacie
 {
 	if ((laboratorio.getCompleto()) == false)
 	{
-		paciente.setLaboratorio(laboratorio);
+		paciente.setLaboratorio(laboratorio.getNombre(), laboratorio);
 	}
 }
 
@@ -51,11 +51,18 @@ void cCentroTesteo::BajaPaciente(cPaciente paciente) //recibe el resultado del t
 	}
 }
 
-void cCentroTesteo::to_string()
+string cCentroTesteo::to_string(int var_int)
 {
-
+	string var_string = to_string(var_int);
+	return var_string;
 }
 
 void cCentroTesteo::Imprimir()
 {
+}
+
+int cCentroTesteo::getResultado(cPaciente* paciente)
+{
+	int resultado = laboratorio->AnalisisMuestra(*paciente);
+	return resultado;
 }

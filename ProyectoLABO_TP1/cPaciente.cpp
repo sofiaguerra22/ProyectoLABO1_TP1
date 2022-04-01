@@ -1,8 +1,9 @@
 #include "cPaciente.h"
 using namespace std;
 
-cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)
+cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado, cCentroTesteo* _centro)//constructor
 {
+
 	nombre = _nombre;
 	apellido = _apellido;
 	DNI = _DNI;
@@ -13,26 +14,48 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	contactoEstrecho = _contactoEstrecho;
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
-	/*laboratorio = _laboratorio;
-	centro = _centro;*/
 	ResultadoTesteo = _resultado;
+	this->centro = new cCentroTesteo();
 }
 
-cPaciente::~cPaciente()
+cPaciente::~cPaciente()//destructor
 {
+	delete centro;
 }
 
-void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)
+/*void cPaciente::setLaboratorio(string _laboratorio, cLaboratorio laboratorio)//asigna los nombres a los laboratorios
 {
 	_laboratorio = laboratorio.getNombre();
+}*/ //esta funcion despues hay que ver de sacarla pq no debe haber relacion directa entre paciente y laboratorio
+
+void cPaciente::setResultado(cCentroTesteo* centro, cPaciente* paciente)//asigna los resultados
+{
+	ResultadoTesteo = centro->getResultado(paciente);
 }
 
-void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)
+void cPaciente::setCentro(cCentroTesteo centro)
 {
-	ResultadoTesteo = laboratorio.AnalisisMuestra(paciente);
+	nombre_centro = centro.getNombre();
 }
 
-void cPaciente::setCentro(cCentroTesteo centro, string _centro)
+void cPaciente::imprimir() {//imprime los datos de los pacientes junto con sus sintomas 
+	cout << "DATOS DEL PACIENTE:" << endl;
+	cout << "Nombre: " << nombre << endl;
+	cout << "Apellido: " << apellido << endl;
+	cout << "DNI: " << DNI << endl;
+	cout << "telefono: " << telefono << endl;
+	cout << "SINTOMAS QUE POSEE:" << endl;
+	cout << "fiebre: " << fiebre << endl;
+	cout << "tos: " << tos << endl;
+	cout << "mocos: " << mocos << endl;
+	cout << "contacto estrecho: " << contactoEstrecho << endl;
+	cout << "dolor cabeza: " << dolorCabeza << endl;
+	cout << "dolor garganta: " << dolorGarganta << endl;
+	cout << "resultado testeo: " << to_string(ResultadoTesteo) << endl;
+}
+
+string cPaciente::to_string(int var_int) //pasa la variable int a string
 {
-	_centro = centro.getNombre();
+	string var_string = to_string(var_int);
+	return var_string;
 }
