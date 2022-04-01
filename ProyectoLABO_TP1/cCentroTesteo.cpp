@@ -27,13 +27,13 @@ void cCentroTesteo::getAltaPaciente(cCentroTesteo centro1, cCentroTesteo centro2
 	if (centro1.completo_c == false)
 	{
 		counter1++;
-		paciente.setCentro(centro1,centro1.getNombre());
+		paciente.setCentro(centro1);
 
 	}
 	else if (centro2.completo_c == false)
 	{
 		counter2++;
-		paciente.setCentro(centro2,centro2.getNombre());
+		paciente.setCentro(centro2);
 	}
 }
 

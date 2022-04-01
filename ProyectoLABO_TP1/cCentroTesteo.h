@@ -12,8 +12,8 @@ private:
 	string ID, nombre;
 	int comuna;
 	bool completo_c;
-	cPaciente* Paciente_c; 
-	cLaboratorio* Laboratorio;
+	cPaciente paciente; 
+	cLaboratorio laboratorio;
 
 public:
 	cCentroTesteo(string _ID, string _nombre, int _comuna, bool _completo_c);
@@ -29,10 +29,3 @@ public:
 	 
 };
 
-/*cCentroTesteo::cCentroTesteo()
-{
-}
-
-cCentroTesteo::~cCentroTesteo()
-{
-}*/

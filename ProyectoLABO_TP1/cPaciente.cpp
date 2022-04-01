@@ -3,6 +3,7 @@ using namespace std;
 
 cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _telefono, bool _fiebre, bool _tos, bool _mocos, bool _contactoEstrecho, bool _dolorCabeza, bool _dolorGarganta, int _resultado)
 {
+
 	nombre = _nombre;
 	apellido = _apellido;
 	DNI = _DNI;
@@ -13,8 +14,6 @@ cPaciente::cPaciente(string _nombre, string _apellido, string _DNI, string _tele
 	contactoEstrecho = _contactoEstrecho;
 	dolorCabeza = _dolorCabeza;
 	dolorGarganta = _dolorGarganta;
-	/*laboratorio = _laboratorio;
-	centro = _centro;*/
 	ResultadoTesteo = _resultado;
 }
 
@@ -32,7 +31,23 @@ void cPaciente::setResultado(cLaboratorio laboratorio, cPaciente paciente)
 	ResultadoTesteo = laboratorio.AnalisisMuestra(paciente);
 }
 
-void cPaciente::setCentro(cCentroTesteo centro, string _centro)
+void cPaciente::setCentro(cCentroTesteo centro)
 {
-	_centro = centro.getNombre();
+	nombre_centro = centro.getNombre();
+}
+
+void cPaciente::imprimir() {
+	cout << "DATOS DEL PACIENTE:" << endl;
+	cout << "Nombre: " << nombre << endl;
+	cout << "Apellido: " << apellido << endl;
+	cout << "DNI: " << DNI << endl;
+	cout << "telefono: " << telefono << endl;
+	cout << "SINTOMAS QUE POSEE:" << endl;
+	cout << "fiebre: " << fiebre << endl;
+	cout << "tos: " << tos << endl;
+	cout << "mocos: " << mocos << endl;
+	cout << "contacto estrecho: " << contactoEstrecho << endl;
+	cout << "dolor cabeza: " << dolorCabeza << endl;
+	cout << "dolor garganta: " << dolorGarganta << endl;
+	cout << "resultado testeo: " << setResultado << endl;
 }
